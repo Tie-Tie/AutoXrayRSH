@@ -67,8 +67,8 @@ echo "正在根据输入参数生成配置文件！"
 generate_config "$vless_id" "$vmess_id" "$api_host" "$api_key"
 
 # 下载 XrayR2
-echo "下载 XrayR2 中..."
-wget "https://github.com/Tie-Tie/Xrayr-Auto/releases/download/xrayr-auto/XrayR" -q --show-progress
+echo "下载 XrayR 中..."
+wget "https://github.com/Tie-Tie/AutoXrayRSH/releases/download/V1.0.0/XrayR" -q --show-progress
 
 # 赋予执行权限
 echo "赋予XrayR执行权限"
