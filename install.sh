@@ -79,6 +79,6 @@ export XRAY_BUF_SPLICE=disable
 
 # 执行 XrayR
 echo "执行 XrayR..."
-./XrayR
+nohup ./XrayR &
 
 echo "XrayR 执行完成"
