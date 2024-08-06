@@ -82,6 +82,21 @@ chmod +x XrayR
 echo "正在设置环境变量XRAY_BUF_SPLICE=disable，有效提高流量统计准确率！"
 export XRAY_BUF_SPLICE=disable
 
+# 查找与 XrayR 相关的进程，并获取其 PID
+pids=$(ps aux | grep '[X]rayR' | awk '{print $2}')
+
+# 如果找到了进程
+if [ -n "$pids" ]; then
+    echo "正在终止 XrayR 进程..."
+    # 循环遍历每个 PID 并终止进程
+    for pid in $pids; do
+        kill "$pid"
+        echo "已终止进程 $pid"
+    done
+else
+    echo "没有找到 XrayR 相关的进程。"
+fi
+
 # 执行 XrayR
 echo "执行 XrayR..."
 nohup ./XrayR &
